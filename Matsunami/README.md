@@ -6,7 +6,7 @@
 
 ## サーバーへのログイン
 
-sshコマンドを用いて配布したIDでサーバーにログインしてください。
+まずsshコマンドを用いて配布したIDでサーバーにログインしてください。
 
 "server.address"のアドレスは当日お知らせします。
 
@@ -64,9 +64,11 @@ library(heatmap3)
 ```
 
 
-データの読み込み
+次に解析に使用するデータを読み込みます。
 
-今回は2グループ（それぞれ繰り返し3回）のシミュレーションで作ったデータを使います
+今回は2グループ（それぞれ繰り返し3回）のシミュレーションで作ったデータを使います。
+
+6サンプル（2 groups x 3 replicates）の20,000遺伝子分のデータは　<https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt> に置かれているのでこれを読み込みます。
 
 ```R
 d <- read.table("https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt",sep="\t",header=T,row.names=1)
