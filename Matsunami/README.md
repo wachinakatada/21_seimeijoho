@@ -220,12 +220,18 @@ abline(h=c(-2,2),col="blue")
 dev.off()
 ```
 
-出力結果
+出力結果を確認しましょう。
+
+MA plotは、横軸に発現の強度、縦軸に２群間での発現の違いが著されています。
+
+２群間で発現変化がない遺伝子はlogFC = 0のところにプロットされます。
+
+赤で表されているFDR < 0.05となる発現変動遺伝子は、logFC = 0のところから離れているのがわかります。
 
 <img src="https://raw.githubusercontent.com/wachinakatada/20_seimeijoho/main/02_Matsunami/Results/DE.MA.jpeg" width="500">
 
 
-P < 0.05だった遺伝子でheat mapをかく
+最後に、P < 0.05だった遺伝子を抽出して、heat mapを書きましょう。
 
 ```R
 #count dataからP < 0.05だった遺伝子のみ抽出
@@ -245,6 +251,9 @@ dev.off()
 <img src="https://raw.githubusercontent.com/wachinakatada/20_seimeijoho/main/02_Matsunami/Results/DE.heatmap.jpeg" width="500">
 
 
+今回のチュートリアルは以上になります。
 
-**お疲れ様です！！！**
+さらに詳しく勉強したい場合は、下記のedgeRのuser guideを参考にしてください。
+
+<https://bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf> 
 
