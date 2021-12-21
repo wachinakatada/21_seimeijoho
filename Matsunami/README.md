@@ -4,14 +4,14 @@
 
 2021年12月21日作成
 
-## サーバーへのログイン
+## サーバへのログイン
 
-まずsshコマンドを用いて配布したIDでサーバーにログインしてください。
+まずsshコマンドを用いて配布したIDでサーバにログインしてください。
 
 "server.address"のアドレスは当日お知らせします。
 
 ```sh
-ssh [共有サーバーのアカウント名]@server.address
+ssh [共有サーバのアカウント名]@server.address
 xxxxx@server.address's password: 
 # [パスワードの入力]
 Last login: XXX 2021 from XX
@@ -21,7 +21,7 @@ Last login: XXX 2021 from XX
 
 ## Rの起動とデータ読み込み
 
-サーバーにログイン出来たら、作業ディレクトリを作成し、Rを起動しましょう。
+サーバにログイン出来たら、作業ディレクトリを作成し、Rを起動しましょう。
 
 
 ```sh
@@ -145,7 +145,7 @@ dev.off()
 
 scatter plotでざっくりとした遺伝子発現の傾向を把握した後、いよいよ遺伝子発現解析を実施します。
 
-今回は、RのedgeRをいう遺伝子発現解析のライブラリを使用します。
+今回は、RのedgeRという遺伝子発現解析のライブラリを使用します。
 
 まずは、授業で説明したTMM (Trimmed Mean of M values)という方法でデータを正規化します。
 
@@ -154,13 +154,15 @@ scatter plotでざっくりとした遺伝子発現の傾向を把握した後�
 grp <- c("G1","G1","G1","G2","G2","G2")
 D <- DGEList(d, group=grp)
 
-#正規化
+#TMM正規化
 D <- calcNormFactors(D) 
 ```
 
-サンプル間で
+正規化後の遺伝子発現がサンプル間でどれぐらい似ているかを多次元解析法の１つであるMDS plotを用いて確認します。
 
-MDS plotを書く
+このplotでは、遺伝子発現が類似しているサンプルほと近くにプロットされます。
+
+今回のデータでは、replicatesがあるので、これらの遺伝子発現は類似していることが期待されます。
 
 ```R
 jpeg('DE.MDS.jpeg')
@@ -168,6 +170,10 @@ jpeg('DE.MDS.jpeg')
 plotMDS(D, labels=grp, xlim = c(-5, 5), ylim = c(-5, 5))
 dev.off()
 ```
+出力された"DE.MDS.jpeg"をサーバから自分のPCに転送して確認しましょう。
+
+確かにreplicatesは、それぞれ近くにプロットされていることがわかります。
+
 
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/Results/DE.MDS.jpeg" width="300">
 
