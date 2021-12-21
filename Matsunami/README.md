@@ -2,19 +2,53 @@
 
 松波　雅俊（大学院医学研究科先進ゲノム検査医学講座）
 
-2020年12月18日作成
+2021年12月21日作成
+
+## サーバーへのログイン
+
+sshコマンドを用いて配布したIDでサーバーにログインしてください。
+"server.address"のアドレスは当日お知らせします。
+
+```sh
+ssh [共有サーバーのアカウント名]@server.address
+xxxxx@server.address's password: 
+# [パスワードの入力]
+Last login: XXX 2021 from XX
+
+```
 
 
 ## Rの起動とデータ読み込み
 
-作業ディレクトリの作成とRの起動
+サーバーにログイン出来たら、作業ディレクトリを作成し、Rを起動しましょう
 
-"/home/hoge/"の部分は解析環境に合わせて変えてください
 
 ```sh
-cd /home/hoge/
-mkdir RNAseq_class
-R
+mkdir RNAseq_class #作業ディレクトリの作成
+cd RNAseq_class　 　　　　　#作業ディレクトリに移動
+R　#Rの起動
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R は、自由なソフトウェアであり、「完全に無保証」です。 
+一定の条件に従えば、自由にこれを再配布することができます。 
+配布条件の詳細に関しては、'license()' あるいは 'licence()' と入力してください。 
+
+R は多くの貢献者による共同プロジェクトです。 
+詳しくは 'contributors()' と入力してください。 
+また、R や R のパッケージを出版物で引用する際の形式については 
+'citation()' と入力してください。 
+
+'demo()' と入力すればデモをみることができます。 
+'help()' とすればオンラインヘルプが出ます。 
+'help.start()' で HTML ブラウザによるヘルプがみられます。 
+'q()' と入力すれば R を終了します。 
+
+> 
+
+
 ```
 
 使用するライブラリーの読み込み
@@ -39,7 +73,7 @@ setwd("/home/hoge/RNAseq_class")
 今回は2グループ（それぞれ繰り返し3回）のシミュレーションで作ったデータを使います
 
 ```R
-d <- read.table("https://raw.githubusercontent.com/wachinakatada/20_seimeijoho/main/02_Matsunami/SimData.txt",sep="\t",header=T,row.names=1)
+d <- read.table("https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt",sep="\t",header=T,row.names=1)
 ```
 
 中身確認
