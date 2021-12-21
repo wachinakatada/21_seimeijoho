@@ -68,27 +68,28 @@ library(heatmap3)
 
 今回は2グループ（それぞれ繰り返し3回）のシミュレーションで作ったデータを使います。
 
-6サンプル（2 groups x 3 replicates）の20,000遺伝子分のデータは　<https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt> に置かれているのでこれを読み込みます。
+6サンプル（2 groups x 3 replicates）, 20,000遺伝子の発現データは　<https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt> に置かれています。
+
+このファイルはタブ区切りで１行目にサンプル名、1列目に遺伝子名が記載されています。
+
+よって、sep="\t"でタブ区切りを指定して,header=Tで１行目を行名とし,row.names=1で1列目を列名として、これを読み込みます。
 
 ```R
 d <- read.table("https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt",sep="\t",header=T,row.names=1)
 ```
 
-中身確認
+データは、行列として変数"d"に格納されました。
+
+正しく読み込めたか中身を確認しましょう。
 
 ```R
-#行列の先頭行
-head(d)
+head(d)　　　　　　#行列の先頭数行を表示
+d$G1_rep1　　#G1_rep1の列を表示
+d[,1]　　　　　　　　　　#1列目を表示
+d[1,]　　　　　　　　　　#1行目を表示
 
-#G1_rep1の列
-d$G1_rep1
-
-#1列目
-d[,1]
-
-#1行目
-d[1,]
 ```
+他にもいろいろな表示方法があるので、各自調べてみてください。
 
 ## scatter plot
 
