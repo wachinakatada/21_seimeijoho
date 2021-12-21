@@ -15,7 +15,7 @@ SplitTree4のインストール (https://software-ab.informatik.uni-tuebingen.de
 ## 1)準備
 
 ### 1-1)計算機サーバへの接続
-http://pjc.lab.u-ryukyu.ac.jp/を参照。  
+http://xxx.xxx.u-ryukyu.ac.jp/ を参照
 Tera Term(またはPuTTY）およびWinSCPを起動(Windows)。  
 Cyberduckの起動(Mac)。  
 ユーザ名、passを入力。  
