@@ -132,10 +132,18 @@ dev.off()
 
 出力結果は下記のようになるはずです。
 
+各々の点が遺伝子を表しており、各軸がそれぞれのグループにおける発現量を表しています。
+
+対角線上に位置する点はグループ間でほぼ同じ発現量の遺伝子です。
+
+一方で、対角線から離れるに従って、グループ間で発現量の差が大きくなることを示しています。
+
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/Results/DE.scatter.jpeg" width="500">
 
 
 ## 発現解析
+
+ざっくりとした傾向を
 
 正規化する
 
