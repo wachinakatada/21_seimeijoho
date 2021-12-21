@@ -66,7 +66,7 @@ library(heatmap3)
 
 次に解析に使用するデータを読み込みます。
 
-今回は2グループ（それぞれ繰り返し3回）のシミュレーションで作ったデータを使います。
+今回はシミュレーションで作った2グループ（それぞれ繰り返し3回）の遺伝子発現データを使います。
 
 6サンプル（2 groups x 3 replicates）, 20,000遺伝子の発現データは　<https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt> に置かれています。
 
