@@ -93,6 +93,8 @@ d[1,]　　　　　　　　　　#1行目を表示
 
 ## scatter plot
 
+データが読み込めたので、サンプルごとの遺伝子発現にどれくらいばらつきがあるのかをscatter plotを用いて確認します。
+
 ```R
 #値が0だとエラーが出るので1を足す
 G1_1 <- d$G1_rep1 + 1 
@@ -103,10 +105,17 @@ G2_2 <- d$G2_rep2 + 1
 G2_3 <- d$G2_rep3 + 1 
 
 #1 pair表示
+jpeg('test.scatter.jpeg',width = 1024, height = 768)
 plot(G1_1, G1_2, log="xy", col="black", pch=16, cex=0.5, xlim = c(1, 10000), ylim = c(1, 10000))
+dev.off()
 ```
+これで、group"G1_1"/group"G1_2"間のscatter plotがファイル"test.scatter.jpeg"に保存されました。
 
-まとめて出力して"DE.scatter.jpeg"保存
+各自、ファイルをサーバから自分のPCに転送して中身を確認してください。
+
+全ての結果をまとめて1つの画像ファイルに保存する場合は、例えば下記のように書きます。
+
+これで、6つのscatter plotがまとめて"DE.scatter.jpeg"に出力されます。
 
 ```R
 jpeg('DE.scatter.jpeg',width = 1024, height = 768)
@@ -121,9 +130,9 @@ plot(G2_1, G2_3, log="xy", col="black", pch=16, cex=0.5, xlim = c(1, 10000), yli
 dev.off()
 ```
 
-出力結果
+出力結果は下記のようになるはずです。
 
-<img src="https://raw.githubusercontent.com/wachinakatada/20_seimeijoho/main/02_Matsunami/Results/DE.scatter.jpeg" width="500">
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/Results/DE.scatter.jpeg" width="500">
 
 
 ## 発現解析
