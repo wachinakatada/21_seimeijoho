@@ -72,7 +72,7 @@ library(heatmap3)
 
 このファイルはタブ区切りで１行目にサンプル名、1列目に遺伝子名が記載されています。
 
-よって、sep="\t"でタブ区切りを指定して,header=Tで１行目を行名とし,row.names=1で1列目を列名として、これを読み込みます。
+よって、sep="\t"でタブ区切りを指定して, header=Tで１行目を行名とし, row.names=1で1列目を列名として、これを読み込みます。
 
 ```R
 d <- read.table("https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/SimData.txt",sep="\t",header=T,row.names=1)
@@ -201,7 +201,11 @@ write.table(tmp$table, "DE.results.tsv", sep="\t", quote=F)
 write.table(tmp[tmp$table$PValue <= 0.05,], "DE.results.p0.05.tsv", sep="\t", quote=F)
 ```
 
-MA plotを書く （FDR < 0.05を赤で色分け）
+一般的には、２群間の比較で, false discovery rate (FDR) < 0.05であれば発現変動遺伝子と定義されることが多いです。
+
+解析結果をMA plotで確認しましょう。
+
+FDR < 0.05となる遺伝子は、赤で色分けします。
 
 ```R
 #発現変動遺伝子を定義
