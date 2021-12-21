@@ -143,9 +143,11 @@ dev.off()
 
 ## 発現解析
 
-ざっくりとした傾向を
+scatter plotでざっくりとした遺伝子発現の傾向を把握した後、いよいよ遺伝子発現解析を実施します。
 
-正規化する
+今回は、RのedgeRをいう遺伝子発現解析のライブラリを使用します。
+
+まずは、授業で説明したTMM (Trimmed Mean of M values)という方法でデータを正規化します。
 
 ```R
 #比較グループを設定
@@ -156,6 +158,8 @@ D <- DGEList(d, group=grp)
 D <- calcNormFactors(D) 
 ```
 
+サンプル間で
+
 MDS plotを書く
 
 ```R
@@ -165,7 +169,7 @@ plotMDS(D, labels=grp, xlim = c(-5, 5), ylim = c(-5, 5))
 dev.off()
 ```
 
-<img src="https://raw.githubusercontent.com/wachinakatada/20_seimeijoho/main/02_Matsunami/Results/DE.MDS.jpeg" width="300">
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/Results/DE.MDS.jpeg" width="300">
 
 発現変動遺伝子の検出
 
