@@ -177,7 +177,9 @@ dev.off()
 
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Matsunami/Results/DE.MDS.jpeg" width="300">
 
-発現変動遺伝子の検出
+それでは、２群間で発現が変動している遺伝子を検出しましょう。
+
+下記のコマンドでは、正規化後のデータの分散を計算した後、正確確率検定で発現変動遺伝子を検出しています。
 
 ```R
 #common dispersionを計算
