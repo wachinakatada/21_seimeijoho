@@ -171,18 +171,21 @@ $ vsearch --fastx_filter jan.f_r_trim.fastq \
 --fastq_truncqual 25 \
 --fastq_minlen 250 \
 --fastq_truncee 1
+```
 
 
 
+### ⑥ dereplication (何通りの配列がそれぞれ何本あるかを調べる) [vsearch --derep_fulllength]
 
-⑥ dereplication (何通りの配列がそれぞれ何本あるかを調べる) [vsearch --derep_fulllength]
-
-形
+**形**
+```sh
 $vsearch --derep_fulllength [インプットのファイル名(.fastq)]  \
 --output  [アウトプットのファイル名(.fasta)] \
 --sizeout \
+```
 
-例
+**例**
+```sh
 $vsearch --derep_fulllength jan.qc.fasta \
 --output jan.derep.fasta \
 --sizeout \
@@ -192,20 +195,23 @@ $vsearch --derep_fulllength jan.qc.fasta \
 && vsearch --derep_fulllength nov.qc.fasta \
 --output nov.derep.fasta \
 --sizeout
+```
 
 
 
+### ⑦ ”キメラ”である可能性が高い配列の除去 [vsearch --uchime_denovo]
 
-⑦ ”キメラ”である可能性が高い配列の除去 [vsearch --uchime_denovo]
-
-形
+**形**
+```sh
 $ vsearch --uchime_denovo  [インプットのファイル名(.fasta)] \
 --sizeout \
 --abskew 2 \
 --nonchimera [アウトプットのファイル名(.fasta)] \
 --relabel [サンプル名]: \
+```
 
-形
+**形**
+```sh
 $ vsearch --uchime_denovo jan.derep.fasta \
 --sizeout \
 --abskew 2 \
@@ -221,13 +227,14 @@ $ vsearch --uchime_denovo jan.derep.fasta \
 --abskew 2 \
 --nonchimera nov.nonchi.fasta \
 --relabel nov: 
+```
 
 
 
+### ⑧ 原核生物の16S rRNA遺伝子でない可能性が高い配列の除去 [vsearch --usearch_global]
 
-⑧ 原核生物の16S rRNA遺伝子でない可能性が高い配列の除去 [vsearch --usearch_global]
-
-形
+**形**
+```sh
 $ vsearch --usearch_global [インプットのファイル名(.fasta)] \
  --sizein\
  --sizeout \
@@ -236,8 +243,10 @@ $ vsearch --usearch_global [インプットのファイル名(.fasta)] \
  --notmatched  [アウトプットのファイル名(既知16S配列と60%未満のidentity)(.fasta)]\
  --mincols 300\
  --threads [数値] \
+```
 
-例
+**例**
+```sh
 $ vsearch --usearch_global jan.nonchi.fasta \
  --sizein\
  --sizeout \
@@ -262,20 +271,23 @@ $ vsearch --usearch_global jan.nonchi.fasta \
  --notmatched nov.notma.fasta\
  --mincols 300\
  --threads 2
+```
 
 
 
+### ⑨ 特定配列数のランダム抽出 [vsearch --fastx_subsample]
 
-⑨ 特定配列数のランダム抽出 [vsearch --fastx_subsample]
-
-形
+**形**
+```sh
 $vsearch --fastx_subsample [インプットのファイル名(.fasta)] \
 --sample_size [配列数] \
 --sizein \
 --sizeout \
 --fastaout [アウトプットのファイル名(.fasta)] \
+```
 
-
+**例**
+```sh
 $ vsearch --fastx_subsample jan.mat.fasta \
 --sample_size 13423 \
 --sizein \
@@ -291,25 +303,27 @@ $ vsearch --fastx_subsample jan.mat.fasta \
 --sizein \
 --sizeout \
 --fastaout nov.subsample.fasta
+```
 
+### ⑩ 各データセットの統合 [cat コマンド]
 
-
-
-⑩ 各データセットの統合 [cat コマンド]
-
-形
+**形**
+```sh
 $ cat [ファイル1 (.fasta)] [ファイル名2 (.fasta)] [ファイル3(.fasta)] > [統合ファイル (.fasta)]
+```
 
-例
+**例**
+```sh
 $ cat *.subsample.fasta > integrated.fasta
+```
 
 
 
 
+### ⑪ OTU分け [vsearch --cluster_size]
 
-⑪ OTU分け [vsearch --cluster_size]
-
-形
+**形**
+```sh
 $ vsearch --cluster_size [インプットのファイル名(.fasta)]\
  --id [identityの閾値] --centroids [OTU代表配列ファイル (.fasta)]\
  --otutabout [OTUテーブル (.txt)]\
@@ -317,8 +331,10 @@ $ vsearch --cluster_size [インプットのファイル名(.fasta)]\
  --relabel :\
  --sizein\
  --sizeout
+```
 
-例
+**例**
+```sh
 $ vsearch --cluster_size integrated.fasta\
  --id 0.97 --centroids centroids.fasta\
  --otutabout otutab.txt\
@@ -326,3 +342,4 @@ $ vsearch --cluster_size integrated.fasta\
  --relabel :\
  --sizein\
  --sizeout
+```
