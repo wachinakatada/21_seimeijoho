@@ -183,7 +183,7 @@ dev.off()
 q()
 ```
 画像ファイルPC1vsPC2.pngを端末に転送して開く
-<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/PC1vsPC2.png" width="600">
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/PC1vsPC2.png" width="800">
 
 ### ハンズオンは以上になります。お疲れさまでした。
 
