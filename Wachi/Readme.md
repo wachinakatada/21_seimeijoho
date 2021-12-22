@@ -465,7 +465,7 @@ $ wc *.fasta.gz
       72     383   19148 total
 ```
 
- #### [発展4で使うコマンド]
+#### [発展4で使うコマンド]
 
 ##### 1. zless
 
@@ -475,3 +475,19 @@ $ wc *.fasta.gz
 
 **gzipで圧縮したまま指定した文字列が含まれる行を出力する**
 
+
+#### おまけ
+
+```python
+import random
+twoN, p = 40, 0.2
+print 0, p
+for generation in range(1, 100):
+	numberOfA1 = 0
+	for trial in range(0, twoN):
+		if random.random() < p:
+			numberOfA1 += 1
+	p = float(numberOfA1) / twoN
+	print generation, p
+<img width="222" alt="image" src="https://user-images.githubusercontent.com/72248513/147115710-02fe085b-aea1-412a-805c-b2cbb6d3b161.png">
+```
