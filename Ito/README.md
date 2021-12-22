@@ -79,15 +79,18 @@ $ vsearch \
 
 
 
-③ マージされた配列についているForward primer配列の除去 [cutadapt -g]
+### ③ マージされた配列についているForward primer配列の除去 [cutadapt -g]
 
-形
+**形**
+```sh
 $ cutadapt -e 0.1 --trimmed-only \
 -g [5'側の配列(forward primer配列)] \
 -o [アウトプットのファイル名(.fastq)] \
 [インプットのファイル名(.fsatq)]
+```
 
-例
+**例**
+```sh
 $ cutadapt -e 0.1 --trimmed-only \
 -g CCTACGGGNGGCWGCAG \
 -o jan.f_trim.fastq \
@@ -100,19 +103,22 @@ jun.merged.fastq \
 -g CCTACGGGNGGCWGCAG \
 -o nov.f_trim.fastq \
 nov.merged.fastq
+```
 
 
 
+### ④ マージされた配列についているreverse primer配列の除去 [cutadapt -a]
 
-④ マージされた配列についているreverse primer配列の除去 [cutadapt -a]
-
-形
+**形**
+```sh
 $ cutadapt -e 0.1 --trimmed-only \
 -a [3'側の配列(reverse primerの逆相補鎖配列)] \
 -o [アウトプットのファイル名(.fastq)] \
 [インプットのファイル名(.fastq)] \
+```
 
-例
+**例**
+```sh
 $ cutadapt -e 0.1 --trimmed-only \
 -a GGATTAGATACCCBDGTAGTC \
 -o jan.f_r_trim.fastq \
@@ -125,13 +131,14 @@ jun.f_trim.fastq \
 -a GGATTAGATACCCBDGTAGTC \
 -o nov.f_r_trim.fastq \
 nov.f_trim.fastq
+```
 
 
 
+### ⑤ シーケンスエラーが含まれている可能性の高い配列の除去 [vsearch --fastx_filter]
 
-⑤ シーケンスエラーが含まれている可能性の高い配列の除去 [vsearch --fastx_filter]
-
-形
+**形**
+```sh
 $ vsearch --fastx_filter [インプットのファイル名(.fastq)] \
 --threads 2 \
 --fastaout [アウトプットのファイル名(.fasta)] \
@@ -139,7 +146,10 @@ $ vsearch --fastx_filter [インプットのファイル名(.fastq)] \
 --fastq_truncqual 25 \
 --fastq_minlen 250 \
 --fastq_truncee 1 \
+```
 
+**例**
+```sh
 $ vsearch --fastx_filter jan.f_r_trim.fastq \
 --threads 2 \
 --fastaout jan.qc.fasta \
