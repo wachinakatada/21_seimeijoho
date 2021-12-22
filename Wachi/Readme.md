@@ -6,7 +6,7 @@
 
 ### 1.1. cd（しーでぃ）
 
-```
+```sh
 # ホームディレクトリに移動
 $ cd
 
@@ -18,20 +18,20 @@ $ cd Documents
 ```
 
 ### 1.2. pwd（ぴーだぶりゅでぃー）
-```bash
+```sh
 # 現在のディレクトリ（カレントディレクトリ）を表示
 $ pwd
 /Users/nwachi
 ```
 
 ### 1.3. mkdir（えむけいでぃあ）
-```bash
+```sh
 # ディレクトリを作成
 $ mkdir [ディレクトリ名]
 ```
 
 ### 1.4. ls（えるえす）
-```bash
+```sh
 # カレントディレクトリのファイルやディレクトリを表示
 $ ls
 
@@ -40,7 +40,7 @@ $ ls -F
 ```
 
 ### 1.5. touch
-```bash
+```sh
 空のファイルを作成する
 $ touch [ファイル名] 
 ```
@@ -48,7 +48,7 @@ $ touch [ファイル名]
 ### 1.6. mv（むーぶ）
 **（元のファイルはなくなることに注意）**
 
-```bash
+```sh
 # ファイルを移動
 mv [ファイル名] [移動先ディレクトリ名]
 
@@ -58,7 +58,7 @@ mv [ファイル名] [新ファイル名]
 
 ### 1.7. cp（こぴー）
 （文字通りコピーを作る）
-```bash
+```sh
 # ファイルをコピーする
 cp [ファイル名] [コピー先ディレクトリ名]
 
@@ -69,7 +69,7 @@ cp [ファイル名] [コピーファイル名]
 ### 1.8. rm（あーるえむ）
 **（即座にファイルが消去されるので要注意）**
 
-```bash
+```sh
 # ファイルを消去する
 rm [ファイル名]
 ```
@@ -77,7 +77,7 @@ rm [ファイル名]
 
 
 ### 演習1: ここまでのコマンドを使ってみよう
-```
+```sh
 # 適当なディレクトリを作成する
 $ mkdir bio2021
 
@@ -111,7 +111,7 @@ file3.csv	file4.csv
 
 ### 発展1. ワイルドカード
 
-```
+```sh
 # 適当なディレクトリを作成する
 $ mkdir dir1
 
@@ -142,28 +142,28 @@ file3.csv	file4.csv
 
 **ページを閉じるには q を入力する**
 
-```
+```sh
 # ファイルの中身を1ページずつ表示
 $ less [ファイル名]
 ```
 
 ### 2.2. cat（きゃっと）
 
-```
+```sh
 # ファイルの中身を全て表示する
 $ cat [ファイル名]
 ```
 
 ### 2.3. grep（ぐれっぷ）
 
-```
+```sh
 # 指定した文字列が含まれる行を出力する
 $ grep [検索したい文字列] [検索対象のファイル名]
 ```
 
 ### 2.4. wc（だぶるしー）
 
-```
+```sh
 # 行数・単語数・バイト数を出力する
 $ wc [調べたいファイル名]
 
@@ -181,7 +181,7 @@ $ wc -l [調べたいファイル名]
 `/mnt/bioInfo2021_share/wachi/data`をコピーする
 
 **共有サーバー上で作業をするとき**
-```
+```sh
 cp -r /mnt/bioInfo2021_share/wachi/data exe2
 cd exe2
 ```
@@ -228,14 +228,14 @@ $ grep "Gorilla" "Gorilla_Bifidobacteriaceae_mod.fasta"
 
 **1つのファイルしか圧縮できないことに注意**
 
-```
+```sh
 # 1つのファイルを圧縮する
 $ gzip [圧縮したいファル名]
 ```
 
 ### 3.2. gunzip
 
-```
+```sh
 # ファイルを展開（解凍）する
 $ gunzip [展開したいファイル名(.gz)]
 ```
@@ -252,7 +252,7 @@ $ gunzip [展開したいファイル名(.gz)]
 
 **tarはまとめるだけで圧縮ではないことに注意**
 
-```
+```sh
 # 複数のファイルをまとめる
 $ tar cvf [まとめた後のファイル名].tar [まとめたいディレクトリ名]
 # 圧縮する
@@ -277,7 +277,7 @@ $ tar jxvf [まとめて圧縮した後のファイル名(.tar.bz2)]
 
 ヒト・ボノボ・チンパンジー・ゴリラの腸内細菌を比較した研究 [Moeller, A. H., Caro-Quintero, A., Mjungu, D., Georgiev, A. V., Lonsdorf, E. V., Muller, M. N., ... & Ochman, H. (2016). Cospeciation of gut microbiota with hominids. *Science*, *353*(6297), 380-382.] のデータの一部を改変して利用
 
-```
+```sh
 # ディレクトリを作成する
 $ mkdir dir2
 
@@ -343,7 +343,7 @@ $ ls -cl dir2/
 
 **エラーの出力を別のファイルに書き込む**
 
-```
+```sh
 $ less xxx.txt
 xxx.txt: No such file or directory
 
@@ -360,7 +360,7 @@ $ less err.txt
 
 ### 演習4. パイプとリダイレクトを使ってみよう
 
-```
+```sh
 # 引数の文字列 "ATGCTTCGATGTAGAAGAGT" を表示する
 $ echo "ATGCTTCGATGTAGAAGAGT"
 ATGCTTCGATGTAGAAGAGT
@@ -407,7 +407,7 @@ $ less RNA.txt
 
 ##### 1. echo（えこー）
 
-```
+```sh
 # 文字列の出力
 $ echo '[文字列]'
 ```
@@ -424,7 +424,7 @@ $ sed -e 's/AAA/BBB/g' [処理を行いたいファイル名]
 
 ヒト・ボノボ・チンパンジー・ゴリラの腸内細菌を比較した研究 [Moeller, A. H., Caro-Quintero, A., Mjungu, D., Georgiev, A. V., Lonsdorf, E. V., Muller, M. N., ... & Ochman, H. (2016). Cospeciation of gut microbiota with hominids. *Science*, *353*(6297), 380-382.] のデータの一部を改変して利用
 
-```
+```sh
 # cat とリダイレクトで複数のファイルを統合する
 $ cat *.fasta > All_Bifidobacteriaceae_mod.fasta
 
