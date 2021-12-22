@@ -1,20 +1,21 @@
 ## メタバーコーディングによる細菌叢解析
+### 2021年12月28日
 
 伊藤通浩（熱帯生物圏研究センター・分子生命科学研究施設）
+2021年12月22日版
 
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Ito/Figure/fig1.jpg" width="1000">
 
 ### ①-1　Raw dataのquality確認 [fastqc]
 
 ```
-＃解析結果の出力フォルダの事前作成が必要
+# 解析結果の出力フォルダの事前作成が必要
 
 $ mkdir fastqc_jan_R1
 
 $ mkdir fastqc_jan_R2
-```
 
-次にfastqcで解析
+# 次にfastqcで解析
 
 $ fastqc -o fastqc_jan_R1/ jan_R1.fastq.gz -t 2 
 
