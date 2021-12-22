@@ -77,10 +77,15 @@ phangorn::writeDist(outputDist, file=paste(vcf.fn, ".nj.nex", sep=""), format="n
 ```q()```
 
 ### 2-6) SplitTree4での図示
-merged.vcf.gz.nj.nexを端末に転送。  
-SplitTree4でopen。  
-neibour-netネットワーク図が出たことを確認。  
-TreesタブからNJを選びApply。  
+merged.vcf.gz.nj.nexを端末に転送  
+
+SplitTree4でopen  
+
+neibour-netネットワーク図が出たことを確認 
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/mergedNN.pdf" width="500">
+
+TreesタブからNJを選びApply  
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/mergedNJ.pdf" width="500">
 
 ### 3) ADMIXTURE解析をしよう
 
@@ -111,6 +116,8 @@ dev.off()
 q()
 ```
 画像ファイルk4.pngを端末に転送して開く。
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/k4.png" width="500">
+
 
 ### 3-5) CVエラーの値
 ```grep -h CV log*.out```
@@ -175,6 +182,7 @@ dev.off()
 q()
 ```
 画像ファイルPC1vsPC2.pngを端末に転送して開く。
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/PC1vsPC2.png" width="500">
 
 
 ### ハンズオンは以上になります。お疲れさまでした。
