@@ -1,7 +1,8 @@
-# 生命情報科学演習2021　集団遺伝学解析
+## 生命情報科学演習2021
+## 集団遺伝学解析
 木村　亮介　（医学研究科人体解剖学講座)
 
-## 0)事前の準備
+### 0)事前の準備
 Tera TermまたはPuTTYのインストール(Windows)。  
 WinSCP(Windows)またはCyberduck(Mac)のインストール。  
 SplitTree4のインストール (https://software-ab.informatik.uni-tuebingen.de/download/splitstree4/welcome.html)
@@ -12,7 +13,7 @@ SplitTree4のインストール (https://software-ab.informatik.uni-tuebingen.de
 * Plink ( https://www.cog-genomics.org/plink/ )
 * ADMIXTURE ( http://dalexander.github.io/admixture/index.html )
 
-## 1)準備
+### 1)準備
 
 ### 1-1)計算機サーバへの接続
 http://xxx.xxx.xxx.ac.jp/ を参照。  
@@ -34,7 +35,7 @@ gzファイルの場合zlessを使用。lessで動く場合もあり。
 ```zless merged.vcf.gz```  
 ↑↓で移動、qで停止。
 
-## 2)遺伝距離行列を計算して系統ネットワークを作ろう
+### 2)遺伝距離行列を計算して系統ネットワークを作ろう
 
 ### 2-1)Rの起動
 ```R```
@@ -78,7 +79,7 @@ SplitTree4でopen。
 neibour-netネットワーク図が出たことを確認。  
 TreesタブからNJを選びApply。  
 
-## 3)ADMIXTURE解析をしよう
+### 3)ADMIXTURE解析をしよう
 
 ### 3-1)VCFファイルをBEDファイルに変換
 ```plink --vcf merged.vcf.gz --keep-allele-order --make-bed --out merged```
@@ -111,7 +112,7 @@ q()
 ### 3-5)CVエラーの値
 ```grep -h CV log*.out```
 
-## 4) 主成分分析を実行しよう
+### 4) 主成分分析を実行しよう
 
 ### 4-1)EIGENSOFTのダウンロード
 ```git clone https://github.com/DReichLab/EIG.git```
@@ -173,5 +174,5 @@ q()
 画像ファイルPC1vsPC2.pngを端末に転送して開く。
 
 
-## ハンズオンは以上になります。お疲れさまでした。
+### ハンズオンは以上になります。お疲れさまでした。
 
