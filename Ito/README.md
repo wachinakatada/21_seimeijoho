@@ -8,7 +8,7 @@
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Ito/Figure/fig1.jpg" width="1000">
 
 ### ①-1　Raw dataのquality確認 [fastqc]
-```sh
+```bash
 # 解析結果の出力フォルダの事前作成が必要
 
 $ mkdir fastqc_jan_R1
