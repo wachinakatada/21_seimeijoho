@@ -115,7 +115,8 @@ barplot(t(as.matrix(tbl)), col=rainbow(7), xlab="Individual #", ylab="Ancestry",
 dev.off()
 q()
 ```
-画像ファイルk4.pngを端末に転送して開く。
+画像ファイルk4.pngを端末に転送して開く
+
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/k4.png", width=1000>
 
 
@@ -181,7 +182,8 @@ legend("bottomright", legend=levels(factor(evec$Pop)), col=1:length(levels(facto
 dev.off()
 q()
 ```
-画像ファイルPC1vsPC2.pngを端末に転送して開く。
+画像ファイルPC1vsPC2.pngを端末に転送して開く
+
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/PC1vsPC2.png", width=1000>
 
 
