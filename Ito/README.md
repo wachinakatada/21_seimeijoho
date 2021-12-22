@@ -1,4 +1,8 @@
+## メタバーコーディングによる細菌叢解析
+
 伊藤通浩（熱帯生物圏研究センター・分子生命科学研究施設）
+
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Ito/Figure/fig1.jpeg" width="1000">
 
 ### ①-1　Raw dataのquality確認 [fastqc]
 
