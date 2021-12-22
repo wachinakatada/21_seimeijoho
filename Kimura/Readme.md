@@ -116,7 +116,7 @@ dev.off()
 q()
 ```
 画像ファイルk4.pngを端末に転送して開く。
-<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/k4.png">
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/k4.png", width=1000>
 
 
 ### 3-5) CVエラーの値
@@ -182,7 +182,7 @@ dev.off()
 q()
 ```
 画像ファイルPC1vsPC2.pngを端末に転送して開く。
-<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/PC1vsPC2.png">
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/PC1vsPC2.png", width=1000>
 
 
 ### ハンズオンは以上になります。お疲れさまでした。
