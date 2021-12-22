@@ -2,12 +2,12 @@
 ### 2021年12月28日
 
 伊藤通浩（熱帯生物圏研究センター・分子生命科学研究施設）
+
 2021年12月22日版
 
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Ito/Figure/fig1.jpg" width="1000">
 
 ### ①-1　Raw dataのquality確認 [fastqc]
-
 ```
 # 解析結果の出力フォルダの事前作成が必要
 
@@ -20,22 +20,19 @@ $ mkdir fastqc_jan_R2
 $ fastqc -o fastqc_jan_R1/ jan_R1.fastq.gz -t 2 
 
 $ fastqc -o fastqc_jan_R2/ jan_R2.fastq.gz -t 2 
+```
 
-
-
-
-①-2  Raw dataのquality確認 [vsearch --fastq_eestats]
-
+### ①-2  Raw dataのquality確認 [vsearch --fastq_eestats]
+```
 $ vsearch --fastq_eestats jan_R1.fastq.gz --output jan_R1_eestats.txt
 
 $ vsearch --fastq_eestats jan_R2.fastq.gz --output jan_R2_eestats.txt
+```
 
+### ② R1とR2のマージ　[vsearch --fastq_mergepairs]
 
-
-
-② R1とR2のマージ　[vsearch --fastq_mergepairs]
-
-形
+**形**
+```
 $ vsearch --fastq_mergepairs [ファイル名 (R1, .fastq.gz)] \
 -reverse [ファイル名 (R2, .fastq.gz)] \
 --fastqout [マージされたファイル名( .fastq)] \
@@ -45,8 +42,10 @@ $ vsearch --fastq_mergepairs [ファイル名 (R1, .fastq.gz)] \
 --fastq_allowmergestagger \
 --fastq_minovlen [数値] \
 --fastq_maxdiffs [数値]
+```
 
-例
+**例**
+```
 $ vsearch \
 --fastq_mergepairs jan_R1.fastq.gz \
 -reverse jan_R2.fastq.gz \
@@ -75,7 +74,7 @@ $ vsearch \
 --fastq_allowmergestagger \
 --fastq_minovlen 10 \
 --fastq_maxdiffs 10
-
+```
 
 
 
