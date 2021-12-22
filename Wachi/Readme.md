@@ -476,7 +476,10 @@ $ wc *.fasta.gz
 **gzipで圧縮したまま指定した文字列が含まれる行を出力する**
 
 
-#### おまけ
+### X. おまけ
+
+John H. Gillespie (2004) Population Genetics: A Concise Guide, 2nd edition 
+
 
 ```python
 import random
@@ -489,5 +492,4 @@ for generation in range(1, 100):
 			numberOfA1 += 1
 	p = float(numberOfA1) / twoN
 	print generation, p
-<img width="222" alt="image" src="https://user-images.githubusercontent.com/72248513/147115710-02fe085b-aea1-412a-805c-b2cbb6d3b161.png">
 ```
