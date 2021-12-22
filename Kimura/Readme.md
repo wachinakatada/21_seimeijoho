@@ -82,10 +82,10 @@ merged.vcf.gz.nj.nexを端末に転送
 SplitTree4でopen  
 
 neibour-netネットワーク図が出たことを確認 
-<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/mergedNN.pdf" width="500">
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/mergedNN.png" width="1000">
 
 TreesタブからNJを選びApply  
-<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/mergedNJ.pdf" width="500">
+<img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Kimura/Figure/mergedNJ.png" width="1000">
 
 ### 3) ADMIXTURE解析をしよう
 
