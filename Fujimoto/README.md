@@ -2,19 +2,20 @@
 ### 2021年12月25日
 ### 藤本真悟（熱帯生物県研究センター・西原研究施設）
 
----
+-
 2020年12月18日作成　和智仲是（熱帯生物圏研究センター・西表研究施設）
 
 2020年12月18日修正　松波雅俊（医学研究科）
 
 2021年12月21日修正　藤本真悟（熱帯生物県研究センター・西原研究施設）
----
+-
 
 ### 1. ファイル転送ツール Filezilla の導入(Mac, Windows 共通)
 
 サーバーに接続して、ファイルをアップロード/ダウンロードするためのソフトをインストール
 
 ダウンロードサイト: https://filezilla-project.org/
+
 インストール方法参照：https://proengineer.internous.co.jp/content/columnfeature/5247
 
 インストールした Filezilla を起動したら、接続先のサーバーを指定するため
@@ -41,6 +42,7 @@ Mac と Windows で手順が少し異なる点に注意
 このクライアントソフトから共有サーバーへ接続する
 
 ダウンロードサイト: ：https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
 インストール方法参照: https://www.ep.sci.hokudai.ac.jp/~epnetfan/tebiki/server-login/putty.html
 
 
