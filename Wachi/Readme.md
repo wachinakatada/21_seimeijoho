@@ -482,6 +482,22 @@ John H. Gillespie (2004) Population Genetics: A Concise Guide, 2nd edition
 Answer to Problem 2.2
 
 ```python
+
+# pythonを起動する
+python
+
+$ python
+Python 2.7.5 (default, Nov 16 2020, 22:23:17) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-44)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+下記のスクリプトを一行ずつ記入していく
+
+（注）スペースの数も大事なので注意
+
+```python
 import random
 twoN, p = 40, 0.2
 print 0, p
@@ -493,3 +509,48 @@ for generation in range(1, 100):
 	p = float(numberOfA1) / twoN
 	print generation, p
 ```
+
+**実行結果**
+```python
+>>> import random
+>>> twoN, p = 40, 0.2
+>>> print 0, p
+0 0.2
+>>> for generation in range(1, 100):
+...     numberOfA1 = 0
+...     for trial in range(0, twoN):
+...             if random.random() < p:
+...                     numberOfA1 += 1
+...     p = float(numberOfA1) / twoN
+...     print generation, p
+... 
+1 0.15
+2 0.3
+3 0.35
+4 0.325
+5 0.375
+6 0.325
+7 0.55
+8 0.675
+9 0.675
+10 0.725
+.
+.
+.
+.
+88 0.6
+89 0.525
+90 0.525
+91 0.575
+92 0.55
+93 0.625
+94 0.6
+95 0.625
+96 0.7
+97 0.7
+98 0.7
+99 0.575
+```
+
+
+
