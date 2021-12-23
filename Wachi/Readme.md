@@ -492,6 +492,9 @@ Python 2.7.5 (default, Nov 16 2020, 22:23:17)
 [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
+
+# pythonを終了する
+exit() #もしくは Ctrl + D
 ```
 
 下記のスクリプトを一行ずつ記入していく
