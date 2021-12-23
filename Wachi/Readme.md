@@ -556,5 +556,49 @@ for generation in range(1, 100):
 99 0.575
 ```
 
+- ここまでのことが `python` を起動しなくてもできる
+```bash
+touch gillespie22.py
 
+echo "import random" >> gillespie22.py
+echo "twoN, p = 40, 0.2" >> gillespie22.py
+echo "print 0, p" >> gillespie22.py
+echo "for generation in range(1, 100):" >> gillespie22.py
+echo -e "\tnumberOfA1 = 0" >> gillespie22.py
+echo -e "\tfor trial in range(0, twoN):" >> gillespie22.py
+echo -e "\t\tif random.random() < p:" >> gillespie22.py
+echo -e "\t\t\tnumberOfA1 += 1" >> gillespie22.py
+echo -e "\tp = float(numberOfA1) / twoN" >> gillespie22.py
+echo -e "\tprint generation, p" >> gillespie22.py
+```
+
+**実行**
+```bash
+$ python gillespie22.py > result.txt
+$ less result.txt
+
+0 0.2
+1 0.125
+2 0.2
+3 0.2
+4 0.225
+5 0.225
+6 0.225
+7 0.3
+8 0.275
+9 0.325
+10 0.3
+11 0.325
+12 0.3
+13 0.325
+14 0.375
+15 0.4
+16 0.35
+17 0.375
+18 0.325
+19 0.225
+20 0.25
+21 0.15
+22 0.25
+```
 
