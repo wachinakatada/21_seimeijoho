@@ -478,8 +478,9 @@ $ wc *.fasta.gz
 
 ### X. おまけ
 
-John H. Gillespie (2004) Population Genetics: A Concise Guide, 2nd edition 
-Answer to Problem 2.2
+John H. Gillespie (2004) "Population Genetics: A Concise Guide", 2nd edition
+
+- Answer to Problem 2.2
 
 ```python
 
