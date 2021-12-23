@@ -396,10 +396,10 @@ $ sed 's/T/U/g' < DNA.txt >> RNA.txt
 $ less RNA.txt
 ```
 
-[EXTRA] 特定の結果を得るためのコマンドは一つではない。
-`perl -pe 's/T/U/g' < DNA.txt > RNA.txt`
-`sed 's/T/U/g' DNA.txt > RNA.txt`
-は同じ結果になる（はず）
+[EXTRA]
+**特定の結果を得るためのコマンドは一つではない**
+`perl -pe 's/T/U/g' < DNA.txt >> RNA.txt`
+も同じ結果が得られる（はず）
 
 
 
