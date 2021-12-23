@@ -477,7 +477,7 @@ $ wc *.fasta.gz
 **gzipで圧縮したまま指定した文字列が含まれる行を出力する**
 
 
-### X. おまけ
+## X. おまけ
 
 John H. Gillespie (2004) "Population Genetics: A Concise Guide", 2nd edition
 
