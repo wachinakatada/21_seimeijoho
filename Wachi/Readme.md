@@ -178,11 +178,11 @@ $ wc -l [調べたいファイル名]
 ヒト・ボノボ・チンパンジー・ゴリラの腸内細菌を比較した研究 [Moeller, A. H., Caro-Quintero, A., Mjungu, D., Georgiev, A. V., Lonsdorf, E. V., Muller, M. N., ... & Ochman, H. (2016). Cospeciation of gut microbiota with hominids. *Science*, *353*(6297), 380-382.] のデータの一部を改変して利用
 
 **ファイル転送ツールを使うとき**
-`/mnt/bioInfo2021_share/wachi/data`をコピーする
+`/mnt/bioInfo/bioInfo2021_share/wachi/data`をコピーする
 
 **共有サーバー上で作業をするとき**
 ```sh
-cp -r /mnt/bioInfo2021_share/wachi/data exe2
+cp -r /mnt/bioInfo/bioInfo2021_share/wachi/data exe2
 cd exe2
 ```
 
