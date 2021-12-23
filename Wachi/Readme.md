@@ -609,3 +609,15 @@ $ tail result.txt
 99 0.0
 ```
 
+- 10回繰り返す
+
+```bash
+$ for i in {1..10};do python gillespie22.py > result_$i.txt;done
+
+$ ls result_*
+
+result_1.txt   result_2.txt  result_4.txt  result_6.txt  result_8.txt
+result_10.txt  result_3.txt  result_5.txt  result_7.txt  result_9.txt
+```
+
+
