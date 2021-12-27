@@ -343,3 +343,38 @@ $ vsearch --cluster_size integrated.fasta\
  --sizein\
  --sizeout
 ```
+
+### ⑫ マルチファスタファイルのリードの一部を上から抽出 [seqkit head] 
+
+**形**
+```sh
+$ seqkit head -n [抽出するリード数] [抽出元の.fasta] > [抽出したリードの.fasta]
+```
+
+**例**
+```sh
+$ seqkit head -n 100 centroids.fasta > 100read_centroids.fasta
+```
+
+
+### ⑬ 塩基配列の相同性検索 [blastn]
+
+**形**
+```sh
+$ blastn -query [クエリの.fasta]\
+ -db [データベース名]\
+ -num_threads [数値]\
+ -out [アウトプットのファイル名]\
+ -num_descriptions [数値]\
+ -num_alignments [数値]
+```
+
+**例**
+```sh
+$ blastn -query 100read_centroids.fasta\
+ -db GreenGenes20110509sp_level\
+ -num_threads 2\
+ -out blastn_result.txt\
+ -num_descriptions 10\
+ -num_alignments 10
+```
