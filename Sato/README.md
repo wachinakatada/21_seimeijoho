@@ -6,7 +6,7 @@
 
 GUI解析ツール
 
-MEGA X
+MEGA XI
 
 ( https://www.megasoftware.net )
 
