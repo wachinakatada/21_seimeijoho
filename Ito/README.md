@@ -10,9 +10,9 @@
 
 ### ⓪ Dataの入手 
 ```bash
-cp -r /mnt/bioInfo/bioInfo2021_share/ito/16S ito
+cp -r /mnt/bioInfo/bioInfo2021_share/ito/16S 16S
 
-cd ito
+cd 16S
 ```
 
 ### ①-1　Raw dataのquality確認 [fastqc]
