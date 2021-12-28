@@ -1,7 +1,7 @@
 # 21_seimeijoho
 
 ## 2021年度・後期「生命情報科学」＠琉球大学
-## **データ共有用ディレクトリ** /mnt/bioInfo/bioInfo2021_share
+**データ共有用ディレクトリ** /mnt/bioInfo/bioInfo2021_share
 
 
 ## 2021年12月25日 - 28日
