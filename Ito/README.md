@@ -7,6 +7,14 @@
 
 <img src="https://raw.githubusercontent.com/wachinakatada/21_seimeijoho/main/Ito/Figure/fig1.jpg" width="1000">
 
+
+### ⓪ Dataの入手 
+```bash
+$ cp -r /mnt/bioInfo/bioInfo2021_share/ito/16S ito
+
+$ cd ito
+```
+
 ### ①-1　Raw dataのquality確認 [fastqc]
 ```bash
 # 解析結果の出力フォルダの事前作成が必要
@@ -179,14 +187,14 @@ $ vsearch --fastx_filter jan.f_r_trim.fastq \
 
 **形**
 ```sh
-$vsearch --derep_fulllength [インプットのファイル名(.fastq)]  \
+$ vsearch --derep_fulllength [インプットのファイル名(.fastq)]  \
 --output  [アウトプットのファイル名(.fasta)] \
 --sizeout \
 ```
 
 **例**
 ```sh
-$vsearch --derep_fulllength jan.qc.fasta \
+$ vsearch --derep_fulllength jan.qc.fasta \
 --output jan.derep.fasta \
 --sizeout \
 && vsearch --derep_fulllength jun.qc.fasta \
@@ -279,7 +287,7 @@ $ vsearch --usearch_global jan.nonchi.fasta \
 
 **形**
 ```sh
-$vsearch --fastx_subsample [インプットのファイル名(.fasta)] \
+$ vsearch --fastx_subsample [インプットのファイル名(.fasta)] \
 --sample_size [配列数] \
 --sizein \
 --sizeout \
