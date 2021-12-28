@@ -10,31 +10,31 @@
 
 ### ⓪ Dataの入手 
 ```bash
-$ cp -r /mnt/bioInfo/bioInfo2021_share/ito/16S ito
+cp -r /mnt/bioInfo/bioInfo2021_share/ito/16S ito
 
-$ cd ito
+cd ito
 ```
 
 ### ①-1　Raw dataのquality確認 [fastqc]
 ```bash
 # 解析結果の出力フォルダの事前作成が必要
 
-$ mkdir fastqc_jan_R1
+mkdir fastqc_jan_R1
 
-$ mkdir fastqc_jan_R2
+mkdir fastqc_jan_R2
 
 # 次にfastqcで解析
 
-$ fastqc -o fastqc_jan_R1/ jan_R1.fastq.gz -t 2 
+fastqc -o fastqc_jan_R1/ jan_R1.fastq.gz -t 2 
 
-$ fastqc -o fastqc_jan_R2/ jan_R2.fastq.gz -t 2 
+fastqc -o fastqc_jan_R2/ jan_R2.fastq.gz -t 2 
 ```
 
 ### ①-2  Raw dataのquality確認 [vsearch --fastq_eestats]
 ```
-$ vsearch --fastq_eestats jan_R1.fastq.gz --output jan_R1_eestats.txt
+vsearch --fastq_eestats jan_R1.fastq.gz --output jan_R1_eestats.txt
 
-$ vsearch --fastq_eestats jan_R2.fastq.gz --output jan_R2_eestats.txt
+vsearch --fastq_eestats jan_R2.fastq.gz --output jan_R2_eestats.txt
 ```
 
 ### ② R1とR2のマージ　[vsearch --fastq_mergepairs]
@@ -54,7 +54,7 @@ $ vsearch --fastq_mergepairs [ファイル名 (R1, .fastq.gz)] \
 
 **例**
 ```
-$ vsearch \
+vsearch \
 --fastq_mergepairs jan_R1.fastq.gz \
 -reverse jan_R2.fastq.gz \
 --fastqout jan.merged.fastq \
@@ -99,7 +99,7 @@ $ cutadapt -e 0.1 --trimmed-only \
 
 **例**
 ```sh
-$ cutadapt -e 0.1 --trimmed-only \
+cutadapt -e 0.1 --trimmed-only \
 -g CCTACGGGNGGCWGCAG \
 -o jan.f_trim.fastq \
 jan.merged.fastq \
@@ -127,7 +127,7 @@ $ cutadapt -e 0.1 --trimmed-only \
 
 **例**
 ```sh
-$ cutadapt -e 0.1 --trimmed-only \
+cutadapt -e 0.1 --trimmed-only \
 -a GGATTAGATACCCBDGTAGTC \
 -o jan.f_r_trim.fastq \
 jan.f_trim.fastq \
@@ -158,7 +158,7 @@ $ vsearch --fastx_filter [インプットのファイル名(.fastq)] \
 
 **例**
 ```sh
-$ vsearch --fastx_filter jan.f_r_trim.fastq \
+vsearch --fastx_filter jan.f_r_trim.fastq \
 --threads 2 \
 --fastaout jan.qc.fasta \
 --fastqout jan.qc.fastq \
@@ -194,7 +194,7 @@ $ vsearch --derep_fulllength [インプットのファイル名(.fastq)]  \
 
 **例**
 ```sh
-$ vsearch --derep_fulllength jan.qc.fasta \
+vsearch --derep_fulllength jan.qc.fasta \
 --output jan.derep.fasta \
 --sizeout \
 && vsearch --derep_fulllength jun.qc.fasta \
@@ -220,7 +220,7 @@ $ vsearch --uchime_denovo  [インプットのファイル名(.fasta)] \
 
 **形**
 ```sh
-$ vsearch --uchime_denovo jan.derep.fasta \
+vsearch --uchime_denovo jan.derep.fasta \
 --sizeout \
 --abskew 2 \
 --nonchimera jan.nonchi.fasta \
@@ -255,7 +255,7 @@ $ vsearch --usearch_global [インプットのファイル名(.fasta)] \
 
 **例**
 ```sh
-$ vsearch --usearch_global jan.nonchi.fasta \
+vsearch --usearch_global jan.nonchi.fasta \
  --sizein\
  --sizeout \
  --db GRD.all.fasta --id 0.60\
@@ -296,7 +296,7 @@ $ vsearch --fastx_subsample [インプットのファイル名(.fasta)] \
 
 **例**
 ```sh
-$ vsearch --fastx_subsample jan.mat.fasta \
+vsearch --fastx_subsample jan.mat.fasta \
 --sample_size 13423 \
 --sizein \
 --sizeout \
@@ -322,7 +322,7 @@ $ cat [ファイル1 (.fasta)] [ファイル名2 (.fasta)] [ファイル3(.fasta
 
 **例**
 ```sh
-$ cat *.subsample.fasta > integrated.fasta
+cat *.subsample.fasta > integrated.fasta
 ```
 
 
@@ -343,7 +343,7 @@ $ vsearch --cluster_size [インプットのファイル名(.fasta)]\
 
 **例**
 ```sh
-$ vsearch --cluster_size integrated.fasta\
+vsearch --cluster_size integrated.fasta\
  --id 0.97 --centroids centroids.fasta\
  --otutabout otutab.txt\
  --mothur_shared_out mom.txt\
@@ -361,7 +361,7 @@ $ seqkit head -n [抽出するリード数] [抽出元の.fasta] > [抽出した
 
 **例**
 ```sh
-$ seqkit head -n 100 centroids.fasta > 100read_centroids.fasta
+seqkit head -n 100 centroids.fasta > 100read_centroids.fasta
 ```
 
 
@@ -379,7 +379,7 @@ $ blastn -query [クエリの.fasta]\
 
 **例**
 ```sh
-$ blastn -query 100read_centroids.fasta\
+blastn -query 100read_centroids.fasta\
  -db GreenGenes20110509sp_level\
  -num_threads 2\
  -out blastn_result.txt\
